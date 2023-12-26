@@ -1,0 +1,80 @@
+<html xmlns:th="https://thymeleaf.org">
+<header>
+	<link href="../static/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+	<link href="../static/css/home.css" th:href="@{/css/home.css}" rel="stylesheet" />
+	<script type="text/javascript" src="/js/bootstrap.bundle.min.js"></script>
+	<script type="text/javascript" src="/js/jquery.min.js"></script>
+	<script type="text/javascript" src="/js/home.js"></script>
+</header>
+
+<body>
+	<div class="container-fluid">
+		<nav class="navbar navbar-expand-lg bg-body-tertiary">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="#">Navbar</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+					aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="navbar-nav">
+						<li class="nav-item">
+							<a class="nav-link active" aria-current="page" href="/home">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Features</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Pricing</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link disabled" aria-disabled="true">Disabled</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div class="row">
+			<div class="col-sm-6"></div>
+			<div class="col-sm-6">
+				<div class="row">
+					<div class="col-sm-2"></div>
+					<div class="col-sm-8">
+						<form th:action="@{/home/register}" th:object="${userInfo}" method="POST">
+							<table border="0" bgcolor="cyan" align="center">
+								<tr>
+									<td> username :: </td>
+									<td> <input type="text" th:field="*{uname}" /> </td>
+								</tr>
+								<tr>
+									<td> password :: </td>
+									<td> <input type="password" th:field="*{pwd}" /> </td>
+								</tr>
+								<tr>
+									<td> email :: </td>
+									<td> <input type="text" th:field="*{email}" /> </td>
+								</tr>
+								<tr>
+									<td> Roles: </td>
+									<td> <input type="checkbox" th:field="*{roles}" value="CUSTOMER" checked> CUSTOMER
+										<input type="checkbox" th:field="*{roles}" value="MANAGER"> MANAGER
+									</td>
+								</tr>
+								<tr>
+									<td> <input type="submit" value="register"> </td>
+									<td> <input type="reset" value="cancel"> </td>
+								</tr>
+							</table>
+						</form>
+					</div>
+					<div class="col-sm-2"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	</form>
+</body>
+
+</html>
