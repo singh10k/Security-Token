@@ -24,7 +24,7 @@ public class loginController {
 	
 	@RequestMapping("/loginPage")
 	public String lognPage() {
-//		List<LogImgDetails> allImgList=service.getOrgAllImg();
+		List<LogImgDetails> allImgList=service.getOrgAllImg();
 		return "loginPage";
 	}
 	@GetMapping("/register")
